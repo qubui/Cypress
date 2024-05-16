@@ -1,0 +1,36 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run",
+    "headTest": "npm run test --headed",
+    "chromeTest": "npm run test --browser chrome",
+    "recordDashBoardTest": "npm run test --record --key d19b60ed-6039-41da-a386-accfa7c24064 --reporter mochawesome",
+    "GreenKartTest": "npm run test --spec \"cypress/integration/GreenKart/*\"",
+    "cucumber-report": "node cucumber-html-report.js"
+  },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "generate": true,
+      "enabled": true,
+      "output": "cypress/reports/html"
+    }
+  },
+  "author": "Quy Bui",
+  "license": "ISC",
+  "devDependencies": {
+    "cucumber-html-reporter": "^7.1.1",
+    "cypress": "^12.0.0",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "mocha": "^10.1.0",
+    "multiple-cucumber-html-reporter": "^3.6.2",
+    "neat-csv": "5.1.0"
+
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.5",
+    "@cypress/browserify-preprocessor": "latest"
+  }
+}
